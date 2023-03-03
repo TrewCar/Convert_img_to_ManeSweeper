@@ -1,0 +1,901 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7C8533E-87D6-4C94-8F27-5EE984D5B024}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Convert_img_to_ManeSweeper</RootNamespace>
+    <AssemblyName>Convert_img_to_ManeSweeper</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.7.0.2\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreateGrid.cs" />
+    <Compile Include="CreateImage.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\BadApple\BadApple_00000.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00001.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00002.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00003.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00004.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00005.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00006.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00007.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00008.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00009.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00010.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00011.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00012.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00013.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00014.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00015.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00016.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00017.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00018.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00019.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00020.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00021.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00022.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00023.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00024.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00025.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00026.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00027.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00028.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00029.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00030.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00031.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00032.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00033.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00034.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00035.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00036.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00037.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00038.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00039.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00040.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00041.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00042.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00043.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00044.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00045.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00046.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00047.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00048.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00049.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00050.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00051.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00052.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00053.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00054.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00055.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00056.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00057.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00058.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00059.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00060.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00061.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00062.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00063.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00064.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00065.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00066.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00067.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00068.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00069.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00070.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00071.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00072.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00073.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00074.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00075.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00076.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00077.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00078.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00079.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00080.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00081.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00082.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00083.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00084.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00085.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00086.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00087.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00088.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00089.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00090.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00091.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00092.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00093.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00094.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00095.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00096.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00097.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00098.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00099.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00100.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00101.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00102.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00103.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00104.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00105.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00106.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00107.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00108.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00109.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00110.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00111.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00112.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00113.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00114.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00115.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00116.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00117.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00118.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00119.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00120.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00121.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00122.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00123.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00124.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00125.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00126.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00127.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00128.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00129.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00130.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00131.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00132.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00133.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00134.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00135.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00136.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00137.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00138.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00139.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00140.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00141.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00142.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00143.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00144.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00145.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00146.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00147.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00148.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00149.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00150.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00151.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00152.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00153.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00154.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00155.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00156.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00157.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00158.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00159.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00160.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00161.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00162.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00163.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00164.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00165.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00166.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00167.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00168.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00169.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00170.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00171.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00172.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00173.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00174.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00175.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00176.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00177.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00178.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00179.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00180.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00181.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00182.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00183.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00184.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00185.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00186.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00187.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00188.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00189.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00190.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00191.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00192.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00193.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00194.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00195.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00196.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00197.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00198.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00199.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00200.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00201.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00202.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00203.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00204.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00205.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00206.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00207.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00208.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00209.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00210.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00211.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00212.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00213.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00214.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00215.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00216.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00217.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00218.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00219.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00220.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00221.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00222.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00223.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00224.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00225.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00226.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00227.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00228.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00229.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00230.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00231.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00232.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00233.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00234.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00235.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00236.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00237.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00238.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00239.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00240.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00241.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00242.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00243.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00244.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00245.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00246.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00247.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00248.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00249.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00250.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00251.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00252.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00253.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00254.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00255.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00256.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00257.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00258.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00259.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00260.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00261.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00262.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00263.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00264.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00265.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00266.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00267.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00268.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00269.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00270.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00271.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00272.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00273.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00274.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00275.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00276.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00277.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00278.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00279.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00280.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00281.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00282.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00283.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00284.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00285.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00286.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00287.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00288.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00289.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00290.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00291.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00292.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00293.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00294.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00295.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00296.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00297.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00298.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00299.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00300.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00301.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00302.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00303.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00304.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00305.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00306.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00307.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00308.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00309.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00310.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00311.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00312.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00313.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00314.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00315.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00316.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00317.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00318.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00319.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00320.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00321.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00322.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00323.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00324.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00325.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00326.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00327.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00328.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00329.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00330.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00331.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00332.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00333.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00334.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00335.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00336.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00337.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00338.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00339.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00340.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00341.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00342.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00343.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00344.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00345.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00346.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00347.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00348.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00349.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00350.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00351.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00352.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00353.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00354.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00355.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00356.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00357.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00358.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00359.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00360.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00361.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00362.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00363.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00364.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00365.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00366.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00367.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00368.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00369.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00370.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00371.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00372.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00373.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00374.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00375.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00376.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00377.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00378.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00379.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00380.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00381.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00382.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00383.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00384.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00385.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00386.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00387.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00388.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00389.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00390.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00391.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00392.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00393.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00394.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00395.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00396.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00397.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00398.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00399.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00400.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00401.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00402.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00403.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00404.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00405.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00406.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00407.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00408.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00409.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00410.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00411.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00412.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00413.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00414.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00415.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00416.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00417.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00418.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00419.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00420.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00421.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00422.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00423.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00424.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00425.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00426.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00427.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00428.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00429.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00430.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00431.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00432.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00433.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00434.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00435.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00436.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00437.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00438.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00439.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00440.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00441.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00442.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00443.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00444.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00445.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00446.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00447.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00448.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00449.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00450.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00451.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00452.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00453.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00454.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00455.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00456.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00457.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00458.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00459.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00460.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00461.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00462.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00463.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00464.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00465.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00466.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00467.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00468.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00469.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00470.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00471.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00472.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00473.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00474.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00475.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00476.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00477.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00478.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00479.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00480.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00481.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00482.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00483.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00484.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00485.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00486.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00487.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00488.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00489.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00490.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00491.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00492.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00493.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00494.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00495.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00496.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00497.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00498.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00499.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00500.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00501.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00502.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00503.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00504.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00505.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00506.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00507.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00508.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00509.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00510.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00511.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00512.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00513.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00514.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00515.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00516.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00517.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00518.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00519.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00520.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00521.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00522.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00523.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00524.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00525.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00526.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00527.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00528.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00529.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00530.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00531.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00532.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00533.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00534.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00535.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00536.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00537.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00538.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00539.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00540.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00541.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00542.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00543.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00544.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00545.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00546.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00547.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00548.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00549.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00550.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00551.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00552.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00553.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00554.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00555.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00556.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00557.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00558.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00559.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00560.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00561.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00562.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00563.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00564.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00565.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00566.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00567.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00568.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00569.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00570.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00571.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00572.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00573.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00574.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00575.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00576.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00577.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00578.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00579.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00580.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00581.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00582.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00583.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00584.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00585.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00586.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00587.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00588.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00589.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00590.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00591.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00592.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00593.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00594.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00595.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00596.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00597.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00598.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00599.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00600.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00601.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00602.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00603.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00604.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00605.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00606.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00607.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00608.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00609.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00610.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00611.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00612.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00613.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00614.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00615.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00616.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00617.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00618.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00619.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00620.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00621.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00622.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00623.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00624.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00625.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00626.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00627.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00628.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00629.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00630.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00631.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00632.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00633.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00634.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00635.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00636.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00637.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00638.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00639.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00640.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00641.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00642.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00643.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00644.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00645.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00646.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00647.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00648.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00649.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00650.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00651.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00652.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00653.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00654.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00655.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00656.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00657.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00658.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00659.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00660.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00661.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00662.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00663.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00664.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00665.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00666.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00667.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00668.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00669.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00670.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00671.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00672.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00673.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00674.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00675.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00676.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00677.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00678.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00679.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00680.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00681.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00682.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00683.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00684.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00685.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00686.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00687.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00688.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00689.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00690.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00691.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00692.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00693.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00694.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00695.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00696.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00697.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00698.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00699.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00700.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00701.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00702.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00703.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00704.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00705.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00706.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00707.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00708.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00709.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00710.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00711.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00712.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00713.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00714.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00715.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00716.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00717.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00718.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00719.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00720.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00721.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00722.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00723.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00724.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00725.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00726.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00727.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00728.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00729.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00730.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00731.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00732.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00733.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00734.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00735.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00736.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00737.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00738.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00739.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00740.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00741.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00742.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00743.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00744.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00745.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00746.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00747.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00748.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00749.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00750.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00751.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00752.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00753.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00754.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00755.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00756.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00757.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00758.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00759.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00760.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00761.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00762.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00763.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00764.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00765.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00766.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00767.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00768.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00769.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00770.png" />
+    <Content Include="bin\Debug\BadApple\BadApple_00771.png" />
+    <Content Include="bin\Debug\Picture\num0.png" />
+    <Content Include="bin\Debug\Picture\num1.png" />
+    <Content Include="bin\Debug\Picture\num10.png" />
+    <Content Include="bin\Debug\Picture\num2.png" />
+    <Content Include="bin\Debug\Picture\num3.png" />
+    <Content Include="bin\Debug\Picture\num4.png" />
+    <Content Include="bin\Debug\Picture\num5.png" />
+    <Content Include="bin\Debug\Picture\num6.png" />
+    <Content Include="bin\Debug\Picture\num7.png" />
+    <Content Include="bin\Debug\Picture\num8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
